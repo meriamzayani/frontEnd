@@ -1,0 +1,22 @@
+
+
+<mat-dialog-content>
+   <table>
+
+       <tr>
+        <td>
+            <mat-form-field class="example-full-width">
+                <mat-label>Commit message</mat-label>
+                <textarea matInput placeholder="Commit message" [(ngModel)]="message"></textarea>
+              </mat-form-field>
+        </td>
+
+    </tr>
+   </table>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button mat-button mat-dialog-close=true mat (click)=upload()>Confirm upload</button>
+</mat-dialog-actions>
+
+

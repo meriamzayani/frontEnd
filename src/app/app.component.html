@@ -1,0 +1,74 @@
+<!--
+<input
+
+#folderInput
+
+type="file"
+
+(change)="filesPicked(folderInput.files)"
+
+webkitDirectory
+
+>
+-->
+<mat-card>
+   <title>demo</title>
+    <mat-card-header>
+        <mat-card-title>Upload</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-form-field class="example-full-width">
+            <mat-label>Directory Path</mat-label>
+            <input matInput placeholder="C:/Users/meriam/Desktop/STAGE"  [(ngModel)]="projectPath"  required >
+          </mat-form-field>
+          &nbsp;&nbsp;&nbsp;
+          <mat-form-field class="example-full-width">
+            <mat-label>Origin Url</mat-label>
+            <input matInput placeholder="https://github.com/.git"  [(ngModel)]="originUrl"  required >
+          </mat-form-field>
+        
+  
+
+               &nbsp;&nbsp;&nbsp;<button mat-button color="primary"  (click)="getProcess()">Submit</button>
+
+          <br>
+          <br>
+          <br>
+          
+          <div >
+            <table class="table  table-stripped">
+                <tr>
+                    <th>Process Name</th><th>Upload</th>
+                </tr>
+                <tr *ngFor="let proc of process">
+                 <td>
+                     {{proc}}
+                 </td>
+                    <td>
+                        <button class="btn btn-primary"   (click)="OpenDialog(proc)">Upload</button>
+                    </td>
+
+        
+                </tr>
+            </table>
+          </div>
+         
+    </mat-card-content>
+    <mat-card-header>
+        <mat-card-title>Download into a specific Directory</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-form-field class="example-full-width">
+            
+            <mat-label>Directory Path</mat-label>
+            <input matInput placeholder="C:/Users/meriam/Desktop/STAGE" [(ngModel)]= "pullDirectory">
+          </mat-form-field>
+          &nbsp;&nbsp;&nbsp;<button mat-button color="primary"  (click)="download()">Download</button>
+        </mat-card-content>
+    
+</mat-card>
+
+
+
+
+    
